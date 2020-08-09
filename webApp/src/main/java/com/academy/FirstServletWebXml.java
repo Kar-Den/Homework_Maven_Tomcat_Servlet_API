@@ -17,10 +17,14 @@ public class FirstServletWebXml extends HttpServlet {
         String b = request.getParameter("secondNum");
         String operation = request.getParameter("operation");
 
+        Double aa = new Double(a);
+        Double bb = new Double(b);
 
         response.getWriter().println(a);
         response.getWriter().println(b);
         response.getWriter().println(operation);
+
+        response.getWriter().println(SimpleCalc.div(aa, bb));
 
     }
 }
