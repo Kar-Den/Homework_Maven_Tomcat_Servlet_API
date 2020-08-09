@@ -7,13 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "SecondServletAnnotation", urlPatterns = "/Servlet2")
+@WebServlet(name = "SecondServletAnnotation", urlPatterns = "/secondServlet")
 public class SecondServletAnnotation extends HttpServlet {
 //    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //
 //    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().println("<h1>SecondServletAnnotation</h1>");
+        response.getWriter().println("<h1>Second-Servlet-Annotation</h1>");
     }
 }
