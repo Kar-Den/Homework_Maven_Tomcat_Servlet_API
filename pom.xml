@@ -6,8 +6,8 @@
 
     <groupId>com.academy</groupId>
     <artifactId>maven-tomcat-servlet-api</artifactId>
-    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,7 +15,6 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <javax.servlet.version>3.1.0</javax.servlet.version>
     </properties>
-
 
     <modules>
         <module>webApp</module>
@@ -29,9 +28,13 @@
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${javax.servlet.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.academy</groupId>
+                <artifactId>service</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-
-
 
 </project>
