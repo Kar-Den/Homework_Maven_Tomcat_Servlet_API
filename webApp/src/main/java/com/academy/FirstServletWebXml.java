@@ -1,5 +1,7 @@
 package com.academy;
 
+import sun.misc.CharacterEncoder;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,11 +22,21 @@ public class FirstServletWebXml extends HttpServlet {
         Double aa = new Double(a);
         Double bb = new Double(b);
 
-        response.getWriter().println(a);
-        response.getWriter().println(b);
-        response.getWriter().println(operation);
+        switch (operation) {
+            case "plus":
+                response.getWriter().println(a + " + " + b + " = " + SimpleCalc.sum(aa, bb));
+                break;
+            case "minus":
+                response.getWriter().println(a + " - " + b + " = " + SimpleCalc.minus(aa, bb));
+                break;
+            case "mul":
+                response.getWriter().println(a + " * " + b + " = " + SimpleCalc.mul(aa, bb));
+                break;
+            case "div":
+                response.getWriter().println(a + " : " + b + " = " + SimpleCalc.div(aa, bb));
+                break;
+            default:response.getWriter().println("Look to operation");
 
-        response.getWriter().println(SimpleCalc.div(aa, bb));
-
+        }
     }
 }
