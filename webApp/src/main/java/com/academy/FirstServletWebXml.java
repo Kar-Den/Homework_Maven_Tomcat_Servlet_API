@@ -12,7 +12,15 @@ public class FirstServletWebXml extends HttpServlet {
 //    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().println("<h1>First_Servlet_Web.xml</h1>");
+
+        String a = request.getParameter("firstNum");
+        String b = request.getParameter("secondNum");
+        String operation = request.getParameter("operation");
+
+
+        response.getWriter().println(a);
+        response.getWriter().println(b);
+        response.getWriter().println(operation);
 
     }
 }
