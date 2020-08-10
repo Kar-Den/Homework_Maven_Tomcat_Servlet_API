@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<form action="/secondServlet" method="post">
+<form action="/webapp/secondServlet" method="POST">
     <h3>Simple calculate form</h3>
     <p>
         <label for="firstNum">First Num</label>
@@ -33,12 +33,17 @@
     </p>
     <p>
         <select id="operation" name="operation">
-            <option selected="selected" value="1">+</option>
-            <option value="2">-</option>
-            <option value="3">*</option>
-            <option value="4">/</option>
+            <option selected="selected" value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="mul">*</option>
+            <option value="div">:</option>
         </select>
     <p>
+
+    <p>
+        <input  type="submit" value="Отправить"/>
+    </p>
+
 
 </form>
 
