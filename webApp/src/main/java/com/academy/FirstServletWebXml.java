@@ -10,11 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static com.academy.SimpleCalc.*;
+
 public class FirstServletWebXml extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext context = getServletContext();
         RequestDispatcher dispatcher = context.getRequestDispatcher("/secondServlet");
-   }
+        dispatcher.include(request, response);
+    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -27,16 +30,16 @@ public class FirstServletWebXml extends HttpServlet {
 
         switch (operation) {
             case "plus":
-                response.getWriter().println(a + " + " + b + " = " + SimpleCalc.sum(aa, bb));
+                response.getWriter().println(a + " + " + b + " = " + sum(aa, bb));
                 break;
             case "minus":
-                response.getWriter().println(a + " - " + b + " = " + SimpleCalc.minus(aa, bb));
+                response.getWriter().println(a + " - " + b + " = " + minus(aa, bb));
                 break;
             case "mul":
-                response.getWriter().println(a + " * " + b + " = " + SimpleCalc.mul(aa, bb));
+                response.getWriter().println(a + " * " + b + " = " + mul(aa, bb));
                 break;
             case "div":
-                response.getWriter().println(a + " : " + b + " = " + SimpleCalc.div(aa, bb));
+                response.getWriter().println(a + " : " + b + " = " + div(aa, bb));
                 break;
             default:response.getWriter().println("Look to operation");
 
