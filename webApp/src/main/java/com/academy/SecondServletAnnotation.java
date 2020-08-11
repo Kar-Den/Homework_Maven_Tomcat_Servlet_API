@@ -1,5 +1,7 @@
 package com.academy;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,10 +37,16 @@ public class SecondServletAnnotation extends HttpServlet {
 
         }
 
+        response.getWriter().println("secServ");
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().println("<h1>Second-Servlet-Annotation</h1>");
+
+        ServletContext context = getServletContext();
+        RequestDispatcher dispatcher = context.getRequestDispatcher("/firstServlet");
+        dispatcher.include(request, response);
+
+        // response.getWriter().println("<h1>Second-Servlet-Annotation</h1>");
     }
 }
