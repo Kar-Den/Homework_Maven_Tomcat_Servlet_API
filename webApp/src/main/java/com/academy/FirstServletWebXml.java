@@ -1,7 +1,5 @@
 package com.academy;
 
-import sun.misc.CharacterEncoder;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -44,5 +42,6 @@ public class FirstServletWebXml extends HttpServlet {
             default:response.getWriter().println("Look to operation");
 
         }
+        response.getWriter().println("firServ");
     }
 }
