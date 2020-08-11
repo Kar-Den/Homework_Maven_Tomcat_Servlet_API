@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<form action="/webapp/secondServlet" method="POST">
+<form action="/webapp/firstServlet" method="POST">
     <h3>Simple calculate form</h3>
     <p>
         <label for="firstNum">First Num</label>
